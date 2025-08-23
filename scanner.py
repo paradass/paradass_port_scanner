@@ -1,9 +1,9 @@
-#Basic port scaner with python -Burak "paradass" Görez
+#Basic port scanner with python -Burak "paradass" Görez
 
 import socket
 import argparse
 
-class Scaner:
+class Scanner:
     def __init__(self):
         self.general_ports = [0] * 1000
         self.general_ports[20] = "ftp"
@@ -32,10 +32,10 @@ class Scaner:
         self.general_ports[993] = "imaps"
         self.general_ports[995] = "pop3s"
 
-    def scan(self):
-        parser = argparse.ArgumentParser(description="Socket port scaner by paradass",add_help=False)
+    def scann(self):
+        parser = argparse.ArgumentParser(description="Socket port scanner by paradass",add_help=False)
         parser.add_argument("-t","--target",required=True,type=str,help="Set target")
-        parser.add_argument("-r","--port_range",type=str,default="1000",help="Set port scan range")
+        parser.add_argument("-r","--port_range",type=str,default="1000",help="Set port scann range")
 
         args = parser.parse_args()
         target:str = args.target
@@ -75,5 +75,5 @@ class Scaner:
                         print(f"{i} {self.general_ports[i]}")
                     
 
-scaner = Scaner()
-scaner.scan()
+scanner = Scanner()
+scanner.scann()
