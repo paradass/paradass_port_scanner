@@ -104,7 +104,11 @@ class Scanner:
                 st.close()
                 if result == 0:
                     service = self.general_ports.get(i,"unknown")
-                    print(f"{i} {service}")
+                    if service == "unknown":
+                        service_color ="\033[31m"
+                    else:
+                        service_color = "\033[34m"
+                    print(f"\033[33m{i} {service_color}{service}\033[0m")
                     
 
 scanner = Scanner()
