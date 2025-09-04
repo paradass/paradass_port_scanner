@@ -1,4 +1,4 @@
-#Basic port scanner with python -Burak "paradass" Görez
+#Basic port scanner with python by Burak "paradass" Görez
 
 import socket
 import argparse
